@@ -22,13 +22,13 @@ class Application(Frame):
         self.QUIT["text"] = "QUIT"
         self.QUIT["fg"]   = "red"
         self.QUIT["command"] =  self.quit
-        self.QUIT.grid(row=2,column=1)
+        self.QUIT.grid(row=5,column=1)
         
         #create button
         self.create = Button(self)
         self.create["text"] = "Create .desktop"
         self.create["fg"]   = "green"
-        self.create.grid(row=2,column=0)
+        self.create.grid(row=5,column=0)
         
         #App name
         self.name = Entry(self)
@@ -39,12 +39,15 @@ class Application(Frame):
         self.typelabel = Label(self, text = "Type")        
         self.application = Entry(self)
         self.application.insert(END, 'Application')
+        self.application.grid(row=2,column=1)
+        self.typelabel.grid(row=2,column=0)
         
         #Path
         self.typelabel = Label(self, text = "Application Path")
         self.path = Entry(self)
         self.application.insert(END, '/opt/')
         self.typelabel.grid(row = 1, column = 0)
+        self.path.grid(row=1,column=1)
         
         #Categories
         self.typelabel = Label(self, textvariable = "Categories")
